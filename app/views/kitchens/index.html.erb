@@ -1,0 +1,9 @@
+<h1>All Your Kitchens</h1>
+
+<% @kitchens.each do |kitchen| %>
+    <div class="btn btn-large kitchen"><%= link_to kitchen.name, kitchen_path(kitchen) %></div>
+
+
+<% end %>
+<br>
+<div class="btn btn-large btn-success kitchen"><%= link_to 'New Kitchen', new_kitchen_path %></div>

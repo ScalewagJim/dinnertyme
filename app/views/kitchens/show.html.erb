@@ -1,0 +1,26 @@
+<div>
+    <h1><%=@kitchen.name%></h1>
+</div>
+<div>
+    <p>What do you want to eat? Select a recipe below.</p>
+</div>   
+        <div>
+            <h2>Recipes</h2>
+        </div>            	
+        <% @kitchen.recipes.all.each do |recipe|%>
+        <div class="btn btn-large">
+        <%= link_to recipe.name, recipe_path(recipe)%>
+        </div>
+        <%end%>
+        <br>
+        <div class="options">
+        	<%= link_to 'Add a recipe', new_recipe_path %>
+        	::
+        	<%= link_to 'Add ingredients', new_ingredient_path %>
+        </div>
+  
+
+<!--
+<%= link_to 'Edit', edit_kitchen_path(@kitchen) %> |
+<%= link_to 'Back', kitchens_path %>
+-->

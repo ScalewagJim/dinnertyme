@@ -1,0 +1,22 @@
+<h1>My recipes</h1>
+
+
+
+<% @recipes.each do |recipe| %>
+  
+    <h2><%= recipe.name %></h2>
+    <h4>Steps:</h4>
+    <p><%= recipe.steps %></p>
+    <div class="recipe-image"><%= image_tag(recipe.photo) %></div>
+    <div class="serves">Serves: <%= recipe.serves %></div>
+    <div class="rating">Rating (out of 5): <%= recipe.rating %></div>
+    <div class="managers"><%= link_to 'Show', recipe %></div>
+    <div class="managers"><%= link_to 'Edit', edit_recipe_path(recipe) %></div>
+    <div class="managers"><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+
+<% end %>
+
+
+<br />
+
+<%= link_to 'New Recipe', new_recipe_path %>

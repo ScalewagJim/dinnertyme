@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="span9">
+        <div class="hero-unit">
+            	<h1>Welcome to DinnerTyme!</h1>
+        </div>
+    </div>
+        <div class="row">
+            <div class="span9">
+                <span>DinnerTyme is an application that helps you figure out what to have for dinner tonight based on the inventory in your kitchen</span>
+            </div>
+            <br>
+            <div class="span9">
+            	<div><h2>Which Kitchen are you in?</h2></div>
+            	
+            	<% Kitchen.all.each do |kitchen|%>
+            	<div class="btn btn-large">
+            	<%= link_to kitchen.name, kitchen_path(kitchen)%>
+            	</div>
+            	<%end%>
+                <div class="btn btn-large">
+                <%= link_to 'New Kitchen', new_kitchen_path%>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
